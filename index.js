@@ -40,9 +40,9 @@ require('./lib/menu.js')
 nocache('./lib/menu.js', module => console.log(`'${module}' Updated!`))
 const start = (piyo = new Client()) => {
     console.log(color(figlet.textSync('----------------', { horizontalLayout: 'default' })))
-    console.log(color(figlet.textSync('Piyo Bot', { font: 'Ghost', horizontalLayout: 'default' })))
+    console.log(color(figlet.textSync('Renz Bot', { font: 'Ghost', horizontalLayout: 'default' })))
     console.log(color(figlet.textSync('----------------', { horizontalLayout: 'default' })))
-    console.log(color('[DEV]'), color('Piyo', 'yellow'))
+    console.log(color('[DEV]'), color('Renz', 'yellow'))
     console.log(color('[~>>]'), color('BOT Started!', 'darkblue'))
 
     // Mempertahankan sesi agar tetap nyala
@@ -63,13 +63,13 @@ const start = (piyo = new Client()) => {
         } else {
             // kondisi ketika batas member group belum tercapai, ubah di file settings/setting.json
             if (chat.groupMetadata.participants.length < memberLimit) {
-                await piyo.sendText(chat.id, `Member lu kurang , minimal member ${memberLimit} people`).then(() => {
+                await piyo.sendText(chat.id, `Member mu kurang , minimal member ${memberLimit} people`).then(() => {
                     piyo.leaveGroup(chat.id)
                     piyo.deleteChat(chat.id)
                 })
             } else {
                 await piyo.simulateTyping(chat.id, true).then(async () => {
-                    await piyo.sendText(chat.id, `Hai anjg~, Saya Whatsapp Bot Pintar.  Untuk memulai bot silahkan ketik ${prefix}menu`)
+                    await piyo.sendText(chat.id, `Hai~, Saya Whatsapp Bot.  Untuk memulai bot silahkan ketik ${prefix}menu`)
                 })
             }
         }
@@ -90,7 +90,7 @@ const start = (piyo = new Client()) => {
             if (event.action === 'add' && event.who !== botNumbers && isWelcome) {
                 const pic = await piyo.getProfilePicFromServer(event.who)
                 if (pic === undefined) {
-                    var pp = 'http://piyobot.cf/pphana.jpg'
+                    var pp = ''
                 } else {
                     var pp = pic
                 }
@@ -116,7 +116,7 @@ const start = (piyo = new Client()) => {
         piyo.getAmountOfLoadedMessages() // menghapus pesan cache jika sudah 3000 pesan.
             .then((msg) => {
                 if (msg >= 3000) {
-                    console.log('[PIYOBOT]', color(`Loaded Message Reach ${msg}, cuting message cache...`, 'yellow'))
+                    console.log('[RENZBOT]', color(`Loaded Message Reach ${msg}, cuting message cache...`, 'yellow'))
                     piyo.cutMsgCache()
                 }
             })
