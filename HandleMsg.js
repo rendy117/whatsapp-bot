@@ -1,7 +1,7 @@
 require('dotenv').config()
 const { decryptMedia } = require('@open-wa/wa-automate')
 const moment = require('moment-timezone')
-moment.tz.setDefault('Asia/Jakarta').locale('id')
+moment.tz.setDefault('Asia/Bandung').locale('id')
 const axios = require('axios')
 const { spawn } = require('child_process')
 const fetch = require('node-fetch')
@@ -21,7 +21,7 @@ const hackq = new quiziz.QuizizzClient();
 const { Readable, Writable } = require('stream')
 const db_group = new FileSync(appRoot + '/lib/data/group.json')
 const db = low(db_group)
-const notice = ['piyobot', 'piyobot']
+const notice = ['renzbot', 'renzbot']
 const { getUser, getPost, searchUser } = require('./lib/Insta')
 const path = require('path')
 const bent = require('bent')
@@ -30,7 +30,7 @@ const fs = require('fs-extra')
 const errorImg = 'https://i.imgur.com/VKoNMIR.png'
 const errorImgg = 'https://i.ibb.co/jRCpLfn/user.png'
 db.defaults({ group: [] }).write()
-var tanggal = moment.tz('Asia/Jakarta').format('YYYY-MM-DD')
+var tanggal = moment.tz('Asia/Bandung').format('YYYY-MM-DD')
 
 const {
     removeBackgroundFromImageBase64
@@ -250,39 +250,39 @@ module.exports = HandleMsg = async (piyo, message) => {
         const stickermsg = message.type === 'sticker'
         const cecan = [
             {
-                lahwoi: "Pacar piyo yang ke 1",
+                lahwoi: "Pacar renz yang ke 1",
                 imagex: "https://i.ibb.co/VT4ggGj/Instagram.jpg",
             },
             {
-                lahwoi: "Pacar piyo yang ke 2",
+                lahwoi: "Pacar renz yang ke 2",
                 imagex: "https://i.ibb.co/x1nD1HD/Instagram-1.jpg",
             },
             {
-                lahwoi: "Pacar piyo yang ke 3",
+                lahwoi: "Pacar renz yang ke 3",
                 imagex: "https://i.ibb.co/ZXPPFKF/Argumentasi-Dimensi.jpg",
             },
             {
-                lahwoi: "Pacar piyo yang ke 4",
+                lahwoi: "Pacar renz yang ke 4",
                 imagex: "https://i.ibb.co/NpY5ZBR/image.jpg",
             },
             {
-                lahwoi: "Pacar piyo yang ke 5",
+                lahwoi: "Pacar renz yang ke 5",
                 imagex: "https://i.ibb.co/PWsL6HF/download-1.jpg",
             },
             {
-                lahwoi: "Pacar piyo yang ke 6",
+                lahwoi: "Pacar renz yang ke 6",
                 imagex: "https://i.ibb.co/JFkDWjB/RASANYA-ANJING-BANGET.jpg",
             },
             {
-                lahwoi: "Pacar piyo yang ke 7",
+                lahwoi: "Pacar renz yang ke 7",
                 imagex: "https://i.ibb.co/5W2gMq6/download-2.jpg",
             },
             {
-                lahwoi: "Pacar piyo yang ke 8",
+                lahwoi: "Pacar renz yang ke 8",
                 imagex: "https://i.ibb.co/QNWhdgC/download-3.jpg",
             },
             {
-                lahwoi: "Pacar piyo yang ke terakhir",
+                lahwoi: "Pacar renz yang ke terakhir",
                 imagex: "https://i.ibb.co/RS1vWC3/Blur.jpg"
             }
         ]
